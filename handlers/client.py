@@ -6,6 +6,7 @@ from keyboards import kb_client
 from aiogram.types import ReplyKeyboardRemove # функция для удаления клавиатуры с экрана
 
 # @dp.message_handler(commands=['start', 'help'])
+# Сообщение приветствия!
 async def command_start(message: types.Message):
     await message.reply(f'Привет, {message.from_user.full_name}!', reply_markup=kb_client)
     for i in range(1):
@@ -13,6 +14,7 @@ async def command_start(message: types.Message):
         await bot.send_message(message.from_user.id, f'{message.from_user.first_name}, Вам что-то понравилось?')
 
 # @dp.message_handler(commands=['Информация'])
+# Информация о чате
 async def info_company(message: types.Message):
     await bot.send_message(message.from_user.id, 'Меня зовут Екатерина и я занимаюсь созданием изделий из эпоксидной смолы')
 
